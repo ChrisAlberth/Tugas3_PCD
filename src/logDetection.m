@@ -1,8 +1,6 @@
 function result = logDetection(image)
-    I = imread(image);
-    figure, imshow(I);
-    I = im2gray(I);
+    I = im2gray(image);
     h = fspecial('log');
     result = uint8(convn(double(I), double(h)));
-    figure, imshow(result);
+    result = result(3:end-2, 3:end-2);
 end

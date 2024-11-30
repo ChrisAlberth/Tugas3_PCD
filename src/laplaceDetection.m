@@ -1,8 +1,6 @@
 function result = laplaceDetection(image)
-    I = imread(image);
-    figure, imshow(I);
     H = [1 1 1; 1 -8 1; 1 1 1];
-    I = im2gray(I);
+    I = im2gray(image);
     result = uint8(convn(double(I), double(H)));
-    figure, imshow(result);
+    result = result(2:end-1, 2:end-1);
 end

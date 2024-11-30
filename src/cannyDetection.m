@@ -1,7 +1,4 @@
 function result = cannyDetection(image)
-    I = imread(image);
-    imshow(I);
-
-    result = edge(im2gray(I), 'canny');
-    figure, imshow(result);
+    image_edge = edge(im2gray(image), 'canny');
+    result = uint8(image_edge) * 255;
 end
