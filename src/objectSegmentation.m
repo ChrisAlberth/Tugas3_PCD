@@ -9,7 +9,7 @@ function result = objectSegmentation(image, image_edge)
     binarized_edge = imbinarize(image_edge);
     
     % Removing small pixel (not the object)
-    binarized_edge = bwareaopen(binarized_edge, 12);
+    binarized_edge = bwareaopen(binarized_edge, 5);
     binarized_edge = imopen(binarized_edge, ones(1, 1));
     
     % Close the edge of the object
